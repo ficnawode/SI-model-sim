@@ -55,7 +55,7 @@ class SIModel(Graph):
             self.try_infecting_neighbors(node)
 
     @staticmethod
-    def create_from_correlation_matrix(corr_mat: np.matrix, infection_prob: float)->SIModel:
+    def from_correlation_matrix(corr_mat: np.matrix, infection_prob: float)->SIModel:
         g = SIModel(int(np.sqrt(corr_mat.size)), infection_prob)
         for i in range(g.size):
             for j in range(i,g.size):
